@@ -1,0 +1,42 @@
+<div id="header" class="py-8 w-full">
+  <div class="grid grid-nogutter p-8">
+
+    <!-- Profile Image -->
+    <div class="col-6">
+      <div class="w-10 h-25rem text-center border-3 border-bluegray-500">
+        <img src="./assets/images/profile.jpg" alt="Selfie"
+          class="border-circle w-4 mx-auto border-2 border-bluegray-100 shadow-6 mt-7">
+        <div class="uppercase withSpacing">
+          <h3
+            class="mb-2 text-300 text-3xl font-medium textShadow fadeindown animation-duration-500 animation-iteration-1">
+            Antonio Hernández</h3>
+          <h5
+            class="mt-2 text-yellow-400 text-lg font-light textShadow fadeindown animation-duration-500 animation-iteration-1">
+            Ingeniero Informático</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal data -->
+    <div class="col-6 -mt-5 text-50">
+      <h1 class="font-medium textShadow fadeindown animation-duration-500 animation-iteration-1">Objetivo Profesional
+      </h1>
+      <p
+        class="py-3 -mt-1 text-lg text-justify textShadow font-medium border-dotted border-x-none fadeindown animation-duration-500 animation-iteration-1">
+        Colaborar dentro del ámbito empresarial a través de proyectos
+        de innovación tecnológica como aplicaciones web (CRM, CSM, ERP, SPA, etc), análisis y diseño de bases de datos
+        relacionales; continuar en proceso de actualización y estudio de las tecnologías emergentes, así como formarme
+        dentro del ámbito de estudio de la Ciencia de los Datos.
+      </p>
+
+      <ul
+        class="mt-4 line-height-4 list-none pl-0 font-semibold text-sm textShadow fadeindown animation-duration-500 animation-iteration-1">
+        <li *ngFor="let con of contactList" class="flex align-items-center justify-content-start">
+          <i class="pi {{con.icon}} w-1"></i>
+          <div class="w-2">{{con.title|uppercase}}</div>
+          <span>: {{con.content}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

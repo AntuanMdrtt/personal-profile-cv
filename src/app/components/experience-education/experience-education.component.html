@@ -1,0 +1,70 @@
+<div class="w-full bg-black-alpha-90">
+
+  <div class="grid grid-no-gutters px-8">
+    <div class="col-12 xl:col-6">
+      <h1 class="my-8 uppercase text-5xl text-primary text-center">Experiencia Laboral</h1>
+
+      <div class="card mx-auto w-12 lg:w-8 xl:w-12">
+        <p-timeline [value]="workPlaces" align="alternate" styleClass="customized-timeline">
+          <ng-template pTemplate="marker" let-work>
+            <span class="custom-marker p-shadow-2" [style.backgroundColor]="'#006775'">
+              <i [ngClass]="work.icon"></i>
+            </span>
+          </ng-template>
+          <ng-template pTemplate="content" let-work>
+            <p-card [header]="work.company" styleClass="p-card-shadow text-sm">
+              <ng-template pTemplate="header">
+                <img [src]="'./assets/images/experience-work/' + work.image" width="320" [alt]="work.company">
+              </ng-template>
+              <ng-template pTemplate="subtitle">
+                <p-tag class="mr-1" icon="pi pi-calendar" [value]="work.lapse"></p-tag>
+                <p-tag class="mr-1" icon="pi pi-map-marker" [value]="work.place"></p-tag>
+                <p-tag class="mr-1" icon="pi pi-user" [value]="work.occupation"></p-tag>
+              </ng-template>
+              <div>
+                <b>Actividades:</b>
+                <ul class="list-none pl-0">
+                  <li *ngFor="let act of work.activities">{{act}}</li>
+                </ul>
+              </div>
+            </p-card>
+          </ng-template>
+        </p-timeline>
+      </div>
+    </div>
+
+    <div class="col-12 xl:col-6">
+      <h1 class="my-8 uppercase text-5xl text-primary text-center">Formación Académica</h1>
+
+      <p-panel class="mx-auto w-12 lg:w-8 xl:w-12 mb-3">
+        <ng-template pTemplate="header">
+          <div>
+            <img class="border-3 border-gray-500 border-round block w-full"
+              src="./assets/images/experience-work/itszacapoaxtla.jpg" width="320" alt="itszacapoaxtla">
+
+            <h3 class="uppercase block text-center text-">
+              (2014 - 2019) Instituto Tecnológico Superior de Zacapoaxtla <br>
+              <small class="text-700">Ingeniería Informática</small>
+            </h3>
+          </div>
+        </ng-template>
+      </p-panel>
+
+      <p-panel header="Udemy" class="mx-auto w-12 lg:w-8 xl:w-12 mt-3">
+        <p-carousel [value]="udemyList" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1" [circular]="true"
+          [autoplayInterval]="5000">
+          <ng-template let-course pTemplate="item">
+            <p-card [subheader]="course.title">
+              <ng-template pTemplate="header">
+                <img [src]="'./assets/images/platforms/udemy/' + course.image" [alt]="course.title" class="w-12">
+              </ng-template>
+            </p-card>
+          </ng-template>
+        </p-carousel>
+      </p-panel>
+    </div>
+
+  </div>
+
+
+</div>

@@ -9,7 +9,18 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 [*.ts]
+max_line_length = 90
 quote_type = single
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[*.html]
+max_line_length = 120
+quote_type = single
+indent_style = space
+indent_size = 2
+insert_final_newline = true
 
 [*.md]
 max_line_length = off
